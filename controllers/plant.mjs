@@ -29,18 +29,16 @@ router.get("/seed", async (req, res) => {
         res.status(400).send(err);
     }
 });
-
-// I - Index    GET         READ - display a list of elements
+// elements to display
 router.get('/', async (req, res) => {
     try {
         const foundPlants = await Plant.find({});
         res.status(200).render('plants/Index', { plants: foundPlants})
-        // res.status(200).send(foundPlants);
     } catch (err) {
         res.status(400).send(err);
     }
 })
-// N - New - allows a user to input a new plants
+// N - New - input a new plants
 router.get('/new', (req, res) => {
     res.render('plants/New');
 })
@@ -75,7 +73,6 @@ router.put('/:id', async (req, res) => {
     }
 })
 //- Create
-// I am starting with my post route so that I can see the things in my database
 router.post('/', async(req, res) => {
     // // this will be useful when have a user input form
     if (req.body.readyToEat === 'on') { // if checked, req.body.readyToEat is set to 'on' - or the checkbox is checked

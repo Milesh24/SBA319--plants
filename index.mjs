@@ -7,6 +7,7 @@ import methodOverride from 'method-override';
 import db from './db/conn.mjs';
 import plantRoutes from './controllers/plant.mjs';
 import flowerRoutes from './controllers/flower.mjs';
+import userRoutes from './controllers/user.mjs'
 
 // creating express application and other variables
 const app = express();
@@ -31,10 +32,11 @@ app.use(methodOverride("_method"))
 
 app.use("/plants", plantRoutes);
 app.use("/flowers",flowerRoutes);
+app.use("/users", userRoutes)
 
 app.get('/', (req, res) => {
     res.send(
-        `<div>This is my candies and cookies route Taste of Home
+        `<div>This is my flowers and plants route 
         <br/><a href='/flowers'>flowers</a><br/><a href='/plants'>plants</a><br/><a href='/users'>users</a</div>`
     );
 });

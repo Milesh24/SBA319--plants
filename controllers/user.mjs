@@ -118,7 +118,7 @@ router.get("/:id/edit", async (req, res) => {
 })
 
 
-// S - SHOW - show route displays details of an individual user
+// S - SHOW - show route displays users
 router.get('/:id', async (req, res) => {
   try {
       const foundUser = await User.findById(req.params.id);

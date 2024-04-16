@@ -13,7 +13,7 @@ import userRoutes from './controllers/user.mjs'
 const app = express();
 const PORT = process.env.PORT || 5050;
 
-// app.use(express.json());
+
 
 // ================ Set up view engine ================
 //

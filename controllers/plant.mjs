@@ -75,10 +75,10 @@ router.put('/:id', async (req, res) => {
 //- Create
 router.post('/', async(req, res) => {
     // // this will be useful when have a user input form
-    if (req.body.readyToEat === 'on') { // if checked, req.body.readyToEat is set to 'on' - or the checkbox is checked
-        req.body.readyToEat = true;
-    } else {                            // if not checked, then it was undefined
-        req.body.readyToEat = false;
+    if (req.body.readyToPick = 'on') { 
+        req.body.readyToPick = true;
+    } else {                            // if not checked, then it is not saved
+        req.body.readyToPick = false;
     }
     console.log(req.body)
 
@@ -100,7 +100,7 @@ router.get("/:id/edit", async (req, res) => {
     }
 })
 
-// S - SHOW - show route displays details of an individual fruit
+// S - SHOW - show route displays plants
 router.get('/:id', async (req, res) => {
     try {
         const foundPlant = await Plant.findById(req.params.id);

@@ -4,7 +4,7 @@ class New extends React.Component {
     render () {
         return (
             <DefaultLayout title={'Add a New User'}>
-                {/* NOTE: action will be the route, method will be the HTTP verb */}
+                {/* NOTE: the route, method is HTTP  */}
                 <form action='/users' method="POST">
                 fName: <input type="text" name="fName" /><br />
                     lName: <input type="name" name="lName" /><br />

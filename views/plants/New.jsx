@@ -5,7 +5,7 @@ class New extends React.Component {
     render () {
         return (
             <DefaultLayout title={'Add a New Plants'}>
-                {/* NOTE: action will be the route, method will be the HTTP verb */}
+                {/* NOTE: action route, method is HTTP  */}
                 <form action='/plants' method="POST">
                     Name: <input type="text" name="name" /><br />
                     Color: < input type="text" name="color"/> <br />
